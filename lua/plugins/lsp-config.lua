@@ -63,7 +63,7 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
-      local servers = { "tsserver", "solargraph", "html", "lua_ls" }
+      local servers = { "tsserver", "solargraph", "html", "lua_ls", "clangd", "gopls" }
 
       for _, server in ipairs(servers) do
         lspconfig[server].setup({
@@ -71,7 +71,6 @@ return {
           on_attach = function(client, bufnr)
             local opts = { noremap = true, silent = true, buffer = bufnr }
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-            -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
