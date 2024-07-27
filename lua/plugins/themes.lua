@@ -25,15 +25,30 @@
 -- }
 
 -- bluloco-theme
+-- return {
+--  {
+--    "uloco/bluloco.nvim",
+--    lazy = false,
+--    name = "bluloco",
+--    priority = 1000,
+--    dependencies = { 'rktjmp/lush.nvim' },
+--    config = function()
+--      vim.cmd.colorscheme "bluloco"
+--    end
+--  }
+-- }
+
+-- sonokai-theme
 return {
   {
-    "uloco/bluloco.nvim",
+    "sainnhe/sonokai",
     lazy = false,
-    name = "bluloco",
+    name = "sonokai",
     priority = 1000,
-    dependencies = { 'rktjmp/lush.nvim' },
     config = function()
-      vim.cmd.colorscheme "bluloco"
+      vim.g.sonokai_style = 'default'  -- Set the style to 'default'
+      vim.cmd.colorscheme "sonokai"
     end
   }
 }
+
